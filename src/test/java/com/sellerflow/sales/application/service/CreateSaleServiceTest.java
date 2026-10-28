@@ -63,7 +63,7 @@ public class CreateSaleServiceTest {
     }
 
     @Test
-    void shouldSaleRepositoryPOrtIsNotCall(){
+    void shouldNotSaveSaleWhenAmountIsInvalid(){
         IllegalArgumentException exception = Assertions.assertThrows(IllegalArgumentException.class, ()-> service.create(fictionalSellerId, fictionalZeroAmount));
 
         Assertions.assertEquals(fictionalInvalidValue, exception.getMessage());
